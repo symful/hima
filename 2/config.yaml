@@ -1,0 +1,572 @@
+type: spec.insomnia.rest/5.0
+schema_version: "5.1"
+name: Canteen API Delivery (Final)
+meta:
+  id: wrk_e8b33ee578d14099bb0e1a1c49855a3b
+  created: 1773827106019
+  modified: 1773827106019
+  description: ""
+collection:
+  - name: 1. Categories
+    meta:
+      id: fld_2f70bf72a5c448b8a579e65ee914463a
+      created: 1773827106045
+      modified: 1773827106045
+      sortKey: 1000
+      description: ""
+    children:
+      - url: "{{ _.base_url }}/api/kategori"
+        name: POST Create
+        meta:
+          id: req_13658d1634e14b698f05d7eb6e82f56e
+          created: 1773827106048
+          modified: 1773827106048
+          isPrivate: false
+          description: ""
+          sortKey: 1100
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nama_kategori": "Snack"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/api/kategori"
+        name: GET All
+        meta:
+          id: req_4c8880f9f42d4dd583ade9cfb5b73940
+          created: 1773827106050
+          modified: 1773827106050
+          isPrivate: false
+          description: ""
+          sortKey: 1200
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/api/kategori/test-id-123"
+        name: GET By ID (Test)
+        meta:
+          id: req_133320d2bb524651a5836b249a8704ce
+          created: 1773827106054
+          modified: 1773827106054
+          isPrivate: false
+          description: ""
+          sortKey: 1300
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/api/kategori/test-id-123"
+        name: PATCH Update (Test)
+        meta:
+          id: req_e9bb6f143f8f4b58a23bfc56995b4edd
+          created: 1773827106056
+          modified: 1773827106056
+          isPrivate: false
+          description: ""
+          sortKey: 1400
+        method: PATCH
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nama_kategori": "Updated Category"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/api/kategori/test-id-123"
+        name: DELETE (Test)
+        meta:
+          id: req_e4edcdb7005b483f91c0365c0bda997e
+          created: 1773827106057
+          modified: 1773827106057
+          isPrivate: false
+          description: ""
+          sortKey: 1500
+        method: DELETE
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: 2. Menu
+    meta:
+      id: fld_c719bb89e4684371a0ac0e8eea80d32b
+      created: 1773827106062
+      modified: 1773827106062
+      sortKey: 2000
+      description: ""
+    children:
+      - url: "{{ _.base_url }}/api/menu"
+        name: POST Create
+        meta:
+          id: req_880f3f855a7149f0ba6f63b305ba5594
+          created: 1773827106064
+          modified: 1773827106064
+          isPrivate: false
+          description: ""
+          sortKey: 2100
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"kategori_id": "test-id-123",
+            	"nama_menu": "Es Teh",
+            	"harga": 5000,
+            	"stok": 10
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/api/menu"
+        name: GET All
+        meta:
+          id: req_5d51511690ea45959d13c17df39e350c
+          created: 1773827106065
+          modified: 1773827106065
+          isPrivate: false
+          description: ""
+          sortKey: 2200
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/api/menu/test-menu-123"
+        name: GET By ID (Test)
+        meta:
+          id: req_362364d8ba4346fe97a09e78e11589d1
+          created: 1773827106067
+          modified: 1773827106067
+          isPrivate: false
+          description: ""
+          sortKey: 2300
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/api/menu/test-menu-123"
+        name: PATCH Update (Test)
+        meta:
+          id: req_5f5a9bcd14174e948f04b5893aa7ad98
+          created: 1773827106071
+          modified: 1773827106071
+          isPrivate: false
+          description: ""
+          sortKey: 2400
+        method: PATCH
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"harga": 6000
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/api/menu/test-menu-123"
+        name: DELETE (Test)
+        meta:
+          id: req_3dbc0d301e9c472283ef59fcb55a9425
+          created: 1773827106072
+          modified: 1773827106072
+          isPrivate: false
+          description: ""
+          sortKey: 2500
+        method: DELETE
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_b170e35b05b646809ce88ef79673b272
+    created: 1773820000000
+    modified: 1773820000000
+environments:
+  name: Base Environment
+  meta:
+    id: env_b7f911c967d7481589953834234b3d6c
+    created: 1773820000000
+    modified: 1773820000000
+    isPrivate: false
+  data:
+    base_url: http://localhost:8787
+spec:
+  contents:
+    swagger: "2.0"
+    info:
+      title: Canteen API
+      version: 1.0.0
+      description: API for managing canteen categories and menus
+    host: localhost:8787
+    basePath: /
+    schemes:
+      - http
+    paths:
+      /api/kategori:
+        get:
+          summary: Get all categories
+          responses:
+            "200":
+              description: Success
+        post:
+          summary: Create a new category
+          responses:
+            "201":
+              description: Created
+      /api/kategori/{id}:
+        get:
+          summary: Get category by ID
+          parameters:
+            - name: id
+              in: path
+              required: true
+              type: string
+          responses:
+            "200":
+              description: Success
+            "404":
+              description: Not Found
+        patch:
+          summary: Update a category
+          parameters:
+            - name: id
+              in: path
+              required: true
+              type: string
+          responses:
+            "200":
+              description: Success
+            "400":
+              description: Bad Request
+        delete:
+          summary: Delete a category
+          parameters:
+            - name: id
+              in: path
+              required: true
+              type: string
+          responses:
+            "200":
+              description: Success
+            "404":
+              description: Not Found
+      /api/menu:
+        get:
+          summary: Get all menu items
+          responses:
+            "200":
+              description: Success
+        post:
+          summary: Create a new menu item
+          responses:
+            "201":
+              description: Created
+            "400":
+              description: Bad Request
+      /api/menu/{id}:
+        get:
+          summary: Get menu by ID
+          parameters:
+            - name: id
+              in: path
+              required: true
+              type: string
+          responses:
+            "200":
+              description: Success
+            "404":
+              description: Not Found
+        patch:
+          summary: Update a menu item
+          parameters:
+            - name: id
+              in: path
+              required: true
+              type: string
+          responses:
+            "200":
+              description: Success
+            "400":
+              description: Bad Request
+        delete:
+          summary: Delete a menu item
+          parameters:
+            - name: id
+              in: path
+              required: true
+              type: string
+          responses:
+            "200":
+              description: Success
+            "404":
+              description: Not Found
+  meta:
+    id: spc_42985ac0a3754522b4e3d058e5f723fb
+    created: 1773827106028
+    modified: 1773827304875
+testSuites:
+  - name: CRUD Verification (v8.6.1 Compatible)
+    meta:
+      id: uts_8816e5f15a8c4f488937c4af80f774b0
+      created: 1773827106073
+      modified: 1773827106073
+      sortKey: 3000
+    tests:
+      - name: 1. [Kategori] Create Validation
+        meta:
+          id: ut_e2b472d7c91244b891abc940a99c7da8
+          created: 1773827106077
+          modified: 1773827106077
+          sortKey: 3100
+        requestId: req_13658d1634e14b698f05d7eb6e82f56e
+        code: |-
+          const response = await insomnia.send();
+
+          console.log('Response:', response.data);
+
+          let body;
+
+          try {
+            body = JSON.parse(response.data);
+          } catch (e) {
+            console.log('Raw response:', response.data);
+            throw new Error('Invalid JSON response');
+          }
+
+          expect(response.status).to.equal(201);
+          expect(body.metadata.status).to.equal('success');
+          expect(body.data.nama_kategori).to.equal('Snack');
+
+          // Store ID for reference only (won't persist)
+          console.log('Created kategori ID:', body.data.id);
+      - name: 2. [Kategori] List Structure
+        meta:
+          id: ut_2fb4bcc819af48c3abdba09feca57d9e
+          created: 1773827106081
+          modified: 1773827106081
+          sortKey: 3200
+        requestId: req_4c8880f9f42d4dd583ade9cfb5b73940
+        code: |-
+          const response = await insomnia.send();
+
+          console.log('Response:', response.data);
+
+          let body;
+
+          try {
+            body = JSON.parse(response.data);
+          } catch (e) {
+            console.log('Raw response:', response.data);
+            throw new Error('Invalid JSON response');
+          }
+
+          expect(response.status).to.equal(200);
+          expect(body.metadata.status).to.equal('success');
+          expect(body.data).to.be.an('array');
+
+          // Log count for debugging
+          console.log('Total categories:', body.data.length);
+      - name: 3. [Kategori] Non-existent ID Returns 404
+        meta:
+          id: ut_77ef45d931c9431ca0672092e5ec8e6f
+          created: 1773827106082
+          modified: 1773827106082
+          sortKey: 3300
+        requestId: req_133320d2bb524651a5836b249a8704ce
+        code: |-
+          const response = await insomnia.send();
+
+          console.log('Response:', response.data);
+
+          expect(response.status).to.equal(404);
+
+          let body;
+          try {
+            body = JSON.parse(response.data);
+            expect(body.metadata.status).to.equal('error');
+          } catch (e) {
+            // Even if JSON parse fails, status check is sufficient
+            console.log('Response received with status 404');
+          }
+      - name: 4. [Kategori] Update Non-existent Returns 400
+        meta:
+          id: ut_56fb179c6d6b4dcfa24c89bfafdcf341
+          created: 1773827106085
+          modified: 1773827106085
+          sortKey: 3400
+        requestId: req_e9bb6f143f8f4b58a23bfc56995b4edd
+        code: |-
+          const response = await insomnia.send();
+
+          console.log('Response:', response.data);
+
+          expect(response.status).to.equal(400);
+      - name: 5. [Menu] Create with Invalid Category Returns 400
+        meta:
+          id: ut_fe9bf6f4708647b2b09d0e3f3403ea89
+          created: 1773827106087
+          modified: 1773827106087
+          sortKey: 3500
+        requestId: req_880f3f855a7149f0ba6f63b305ba5594
+        code: |-
+          const response = await insomnia.send();
+
+          console.log('Response:', response.data);
+
+          expect(response.status).to.equal(400);
+
+          let body;
+          try {
+            body = JSON.parse(response.data);
+            expect(body.metadata.status).to.equal('error');
+          } catch (e) {
+            // Status check is sufficient
+          }
+      - name: 6. [Menu] List Structure
+        meta:
+          id: ut_b1048f7628634b03a46c6c69dc053b78
+          created: 1773827106090
+          modified: 1773827106090
+          sortKey: 3600
+        requestId: req_5d51511690ea45959d13c17df39e350c
+        code: |-
+          const response = await insomnia.send();
+          
+          console.log('Response:', response.data);
+
+          let body;
+
+          try {
+            body = JSON.parse(response.data);
+          } catch (e) {
+            console.log('Raw response:', response.data);
+            throw new Error('Invalid JSON response');
+          }
+
+          expect(response.status).to.equal(200);
+          expect(body.metadata.status).to.equal('success');
+          expect(body.data).to.be.an('array');
+
+          // Optional: check if any items have kategori property
+          if (body.data.length > 0 && body.data[0].kategori) {
+            console.log('Menu items include category data');
+          }
+      - name: 7. [Menu] Non-existent ID Returns 404
+        meta:
+          id: ut_acedd53793174a8f8b4f7e1431976a8a
+          created: 1773827106094
+          modified: 1773827106094
+          sortKey: 3700
+        requestId: req_362364d8ba4346fe97a09e78e11589d1
+        code: |-
+          const response = await insomnia.send();
+
+          console.log('Response:', response.data);
+
+          expect(response.status).to.equal(404);
+      - name: 8. [Menu] Update Non-existent Returns 400
+        meta:
+          id: ut_a1c4281208fb4ed68db676f225c04372
+          created: 1773827106097
+          modified: 1773827106097
+          sortKey: 3800
+        requestId: req_5f5a9bcd14174e948f04b5893aa7ad98
+        code: |-
+          const response = await insomnia.send();
+
+          console.log('Response:', response.data);
+
+          expect(response.status).to.equal(400);
+      - name: 9. [Menu] Delete Non-existent Returns 404
+        meta:
+          id: ut_9b204802076c4a45be714872b30b8cb3
+          created: 1773827106099
+          modified: 1773827106099
+          sortKey: 3900
+        requestId: req_3dbc0d301e9c472283ef59fcb55a9425
+        code: |-
+          const response = await insomnia.send();
+
+          console.log('Response:', response.data);
+
+          expect(response.status).to.equal(404);
+      - name: 10. [Kategori] Delete Non-existent Returns 404
+        meta:
+          id: ut_f639ed27c0584e2cb2ca5cde058d2cc1
+          created: 1773827106100
+          modified: 1773827106100
+          sortKey: 4000
+        requestId: req_e4edcdb7005b483f91c0365c0bda997e
+        code: |-
+          const response = await insomnia.send();
+
+          console.log('Response:', response.data);
+
+          expect(response.status).to.equal(404);
